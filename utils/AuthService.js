@@ -1,4 +1,5 @@
 import React from 'react';
+import auth0 from 'auth0-js';
 
 export default class AuthService {
 	constructor(clientId, domain) {
@@ -6,7 +7,7 @@ export default class AuthService {
 		this.clientId = clientId;
 		this.domain = domain;
 
-		this.auth0 = new window.auth0.WebAuth({
+		this.auth0 = auth0.WebAuth({
 			domain: domain,
 			clientID: clientId,
 			scope: 'openid profile',
